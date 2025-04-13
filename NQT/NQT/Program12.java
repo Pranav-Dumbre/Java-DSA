@@ -23,9 +23,16 @@ public class Program12 {
         addFirstnatural(i - 1, sum);
     }
 
+    public static int firstsum(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return n + firstsum(n - 1);
+    }
+
     public static void main(String[] args) {
         sumFirstnatural(5);
         addFirstnatural(5, 0);
-
+        System.out.println(firstsum(5));
     }
 }
