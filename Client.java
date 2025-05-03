@@ -128,6 +128,22 @@ class LinkedList {
             }
         }
     }
+
+    void reverseSLL() {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+    
+        while (current != null) {
+            next = current.next;  // store next node
+            current.next = prev;  // reverse current node's pointer
+            prev = current;       // move prev one step forward
+            current = next;       // move current one step forward
+        }
+    
+        head = prev;  // update head to the new first node
+    }
+    
 }
 
 class Client {
@@ -145,6 +161,8 @@ class Client {
             System.out.println("6.delAtPosition");
             System.out.println("7.conutNode");
             System.out.println("8.Print SLL");
+            System.out.println("9.ReverseSLL");
+
 
             System.out.println("Enter Your Choice: ");
             Scanner sc = new Scanner(System.in);
@@ -189,6 +207,9 @@ class Client {
                     break;
                 case 8:
                     ll.printSLL();
+                    break;
+                    case 9:
+                    ll.reverseSLL();
                     break;
                 default:
                     System.out.println("Wrong choice");
