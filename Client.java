@@ -200,6 +200,7 @@ class Client {
                     int pos = sc.nextInt();
                     ll.delAtPos(pos);
                 }
+                
                 case 7: {
                     int Count = ll.countNode();
                     System.out.println("Count=" + Count);
